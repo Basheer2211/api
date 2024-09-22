@@ -1,13 +1,9 @@
-function size1(){
-   document.querySelector("div").classList.remove("s"); 
-document.querySelector("div").classList.add("ss");
+var data =["ahmad","Ali" ,"Basheer","Aya","sondos"];
+var n="";
 
+for (var index = 0; index < data.length; index++) {
+   n +=`<tr><td>${data[index]}</td> </tr>`;
+
+   
 }
-function size2(){
-    document.querySelector("div").classList.remove("ss"); 
-    document.querySelector("div").classList.add("s")
-}
-
-
-document.querySelector(".biger").onclick=size1;
-document.querySelector(".smaller").onclick=size2;
+document.querySelector("tbody").innerHTML=n;
