@@ -1,9 +1,35 @@
-var data =["ahmad","Ali" ,"Basheer","Aya","sondos"];
-var n="";
+var reg=document.querySelector(".regester");
 
-for (var index = 0; index < data.length; index++) {
-   n +=`<tr><td>${data[index]}</td> </tr>`;
+var nameInput=document.querySelector("#name");
+var descriptionInput=document.querySelector("#description");
+var priceInput=document.querySelector("#price");
+var users=[];
+reg.onsubmit = function(e) {
+e.preventDefault();
+var user ={
+name :nameInput.value,
+description :descriptionInput.value,
+ price :priceInput.value,
 
-   
+};
+users.push(user);
+console.log(users);
+printData();
+function printData(){
+    var data=``;
+    for(var i=0;i<users.length;i++)
+    {
+        data+=`
+        <tr>
+        <td>${users[i].name}</td>
+        <td>${users[i].description}</td>
+        <td>${users[i].price}</td>
+
+        </tr>
+        `;
+    }
+    document.querySelector("tbody").innerHTML=data;
+    console.log(data);
 }
-document.querySelector("tbody").innerHTML=n;
+}
+
